@@ -15,6 +15,9 @@ action.forEach((span) => {
     if (e.target.classList.contains("show")) {
       showItems();
     }
+    if (e.target.classList.contains("clear")) {
+      clearItems();
+    }
   });
 });
 
@@ -77,6 +80,10 @@ function showItems() {
 results.innerHTML +=`<span style="display:block;text-align: center;">${key}</span>`
   }
  }else{
-results.innerHTML=`not found item in localstorage`
+results.innerHTML=`not found item in localStorage`
  }
+}
+function clearItems(){
+  localStorage.clear()
+  results.innerHTML=`all items in localStorage is cleared`
 }
